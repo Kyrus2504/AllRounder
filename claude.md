@@ -11,6 +11,9 @@
 A local-only web app combining a meal planner, workout planner, and fitness tracker.
 No need for production security hardening — this is a local dev/portfolio project.
 
+## Collaboration style
+Where possible, do not write code directly to files or create new files in the repository. Instead, act as a guide — explain step by step what needs to be done and why, so the user can implement it themselves.
+
 ## Folder structure
 - `Client/` — Blazor WASM pages and components (.razor files)
 - `Server/` — ASP.NET Core controllers, AppDbContext, EF migrations
