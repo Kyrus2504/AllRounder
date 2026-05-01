@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj": {}
+    "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj": {
+    "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj",
-        "projectName": "CLient",
-        "projectPath": "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj",
+        "projectUniqueName": "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj",
+        "projectName": "Client",
+        "projectPath": "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\anony\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\anony\\AllRounder\\Client\\obj\\",
         "projectStyle": "PackageReference",

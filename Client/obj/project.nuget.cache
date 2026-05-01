@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UmpDkb0iNZw=",
+  "dgSpecHash": "Mske6qBCJPs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj",
+  "projectFilePath": "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anony\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.26\\microsoft.aspnetcore.authorization.8.0.26.nupkg.sha512",
     "C:\\Users\\anony\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.26\\microsoft.aspnetcore.components.8.0.26.nupkg.sha512",

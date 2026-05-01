@@ -1424,7 +1424,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "CLient/1.0.0": {
+      "Client/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -1432,10 +1432,10 @@
           "Shared": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/CLient.dll": {}
+          "bin/placeholder/Client.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CLient.dll": {}
+          "bin/placeholder/Client.dll": {}
         }
       },
       "Shared/1.0.0": {
@@ -3712,10 +3712,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "CLient/1.0.0": {
+    "Client/1.0.0": {
       "type": "project",
-      "path": "../Client/CLient.csproj",
-      "msbuildProject": "../Client/CLient.csproj"
+      "path": "../Client/Client.csproj",
+      "msbuildProject": "../Client/Client.csproj"
     },
     "Shared/1.0.0": {
       "type": "project",
@@ -3725,7 +3725,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "CLient >= 1.0.0",
+      "Client >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 8.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.26",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
@@ -3759,8 +3759,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj": {
-              "projectPath": "C:\\Users\\anony\\AllRounder\\Client\\CLient.csproj"
+            "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj": {
+              "projectPath": "C:\\Users\\anony\\AllRounder\\Client\\Client.csproj"
             },
             "C:\\Users\\anony\\AllRounder\\Shared\\Shared.csproj": {
               "projectPath": "C:\\Users\\anony\\AllRounder\\Shared\\Shared.csproj"
