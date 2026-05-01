@@ -1,17 +1,16 @@
-namespace Server.data;
+using Microsoft.EntityFrameworkCore;
+using Shared;
 
-public class MainDbContext : DbContext {
-    public MainDbContext(DbContextOptions<MainDbContext> options)
-        : base(options) {
-    }
+namespace Server.Data;
 
-    protected MainDbContext(DbContextOptions options)
-        : base(options) {
-    }
-}
 
-public class SubDbContext : MainDbContext {
-    public SubDbContext (DbContextOptions<SubDbContext> options)
-        : base(options) {
-    }
+
+
+
+public class AppDbContext : DbContext {
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Meal> Meals {get; set;}
+    public DbSet<Workout> Workouts {get; set;}
+    public DbSet<FitnessEntry> FitnessEntries {get; set;}
 }
