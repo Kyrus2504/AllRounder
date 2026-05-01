@@ -2,10 +2,9 @@ namespace Shared;
 
 public class FitnessEntry
 {
-    int id;
-    string name, type;
-    int duration;
-    int distance;
-    int CalBurned;
+    public int Id {get; set;}
+    public DateTime Date {get; set;}
+    public double WeightKg {get; set;}
+    public string? Notes {get; set;}
 
 }

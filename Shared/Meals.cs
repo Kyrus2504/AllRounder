@@ -2,13 +2,15 @@ namespace Shared;
 
 public class Meal
 {
-    int id;
-    string name;
-    int calories;
-    double fat, carbs, protein;
+    public int Id {get; set;}
+    public string Name {get; set;}
+    public int Calories {get; set;}
+    public double Fat {get; set;}
+    public double Farbs {get; set;}
+    public double Frotein {get; set;}
 
-    DateTime lastEaten;
+    public DateTime LastEaten {get; set;}
 
-    List<string> ingredients;
+    public List<string> Ingredients {get; set;}
 
 }

@@ -2,13 +2,14 @@ namespace Shared;
 
 public class Workouts
 {
-    int id;
-    string name, type;
+    public int Id {get; set;}
+    public string Name {get; set;}
+    public string Type {get; set;}
     
-    int duration;
+    public int Duration {get; set;}
 
-    int expectCalBurned;
+    public int ExpectCalBurned {get; set;}
 
-    List<string> exerciseList;
+    public List<string> ExerciseList {get; set;}
 
 }
