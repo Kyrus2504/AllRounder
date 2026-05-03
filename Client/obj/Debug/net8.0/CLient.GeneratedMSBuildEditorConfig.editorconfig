@@ -11,8 +11,8 @@ build_property.InvariantGlobalization = false
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = browser
-build_property.RootNamespace = Client
-build_property.RootNamespace = Client
+build_property.RootNamespace = CLient
+build_property.RootNamespace = CLient
 build_property.ProjectDir = C:\Users\anony\AllRounder\Client\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
@@ -30,12 +30,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/anony/AllRounder/Client/Pages/FitnessEntries.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRml0bmVzc0VudHJpZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/anony/AllRounder/Client/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/anony/AllRounder/Client/Pages/Meals.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVhbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/anony/AllRounder/Client/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/anony/AllRounder/Client/Pages/Workouts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya291dHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/anony/AllRounder/Client/_Imports.razor]
@@ -44,8 +56,8 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/anony/AllRounder/Client/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-tmopy668it
+build_metadata.AdditionalFiles.CssScope = b-a5ojnt9ix9
 
 [C:/Users/anony/AllRounder/Client/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-9qkkwgv1yd
+build_metadata.AdditionalFiles.CssScope = b-ucxa51h30m
