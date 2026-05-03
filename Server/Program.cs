@@ -9,6 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddControllers();
+
 
 
 var app = builder.Build();
@@ -43,6 +45,7 @@ app.MapGet("/weatherforecast", () =>
 .WithOpenApi();
 
 app.UseBlazorFrameworkFiles();
+app.MapControllers();
 app.UseStaticFiles();
 app.MapFallbackToFile("index.html");
 
