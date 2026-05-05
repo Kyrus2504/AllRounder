@@ -1,0 +1,85 @@
+@page "/workouts"
+@using Shared
+@inject WorkoutService WorkoutService
+
+
+<h3>Workouts</h3>
+
+@if (workouts == null){
+    <p>Loading...</p>
+}
+else{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th> <th>Type</th> <th>Duration</th> <th>Expected Calories Burnt</th> <th>Scheduled For</th> <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Workout workout in workouts){
+                <tr>
+                    <td>@workout.Name</td>
+                    <td>@workout.Type</td>
+                    <td>@workout.Duration</td>
+                    <td>@workout.ExpectCalBurned</td>
+                    <td>@workout.ScheduledFor</td>
+                    <td>@workout.Notes</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" @onclick="() => StartEdit(workout)">Edit</button>
+                        <button class="btn btn-sm btn-danger" @onclick="() => DeleteMeal(workout.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+<h4>@(editingWorkout.Id == 0 ? "Add Meal" : "Edit Meal")</h4>
+
+<input class="form-control" placeholder="Name" @bind="editingWorkout.Name"/>
+<input class="form-control" placeholder="Type" type="number" @bind="editingWorkout.Type" />
+<input class="form-control" placeholder="Duration" type="number" @bind="editingWorkout.Duration" />
+<input class="form-control" placeholder="Expected Calories Burned" type="number" @bind="editingWorkout.ExpectCalBurned" />
+<input class="form-control" placeholder="Scheduled For" type="number" @bind="editingWorkout.ScheduledFor" />
+<input class="form-control" placeholder="Notes" type="number" @bind="editingWorkout.Notes" />
+<button class="btn btn-primary mt-2" @onclick="SaveMeal">Save</button>
+<button class="btn btn-secondary mt-2" @onclick="ResetForm">Cancel</button>
+
+@code{
+
+    private List<Workout>? workouts;
+    private Workout editingWorkout = new Workout();
+
+    //must use American English for this function since its inbuilt in Blazor
+    protected override async Task OnInitializedAsync(){
+        workouts = await WorkoutService.GetAllAsync();
+    }
+
+    private void StartEdit(Workout workout){
+        editingWorkout = new Workout{
+            Id = workout.Id, Name = workout.Name, Type = workout.Type, Duration = workout.Duration, ExpectCalBurned = workout.ExpectCalBurned, ScheduledFor = workout.ScheduledFor, Notes = workout.Notes
+        };
+    }
+
+    private async Task SaveMeal(){
+        if (editingWorkout.Id == 0){
+            await WorkoutService.CreateAsync(editingWorkout);
+        }
+        else{
+            await WorkoutService.UpdateAsync(editingWorkout.Id, editingWorkout);
+        }
+
+        ResetForm();
+        workouts = await WorkoutService.GetAllAsync();
+    }
+
+    private async Task DeleteMeal(int id){
+        await WorkoutService.DeleteAsync(id);
+        workouts = await WorkoutService.GetAllAsync();
+    }
+
+    private void ResetForm(){
+        editingWorkout = new Workout();
+    }
+}

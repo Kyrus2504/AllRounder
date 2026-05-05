@@ -1,0 +1,84 @@
+@page "/meals"
+@using Shared
+@inject MealService MealService
+
+
+<h3>Meals</h3>
+
+@if (meals == null){
+    <p>Loading...</p>
+}
+else{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th> <th>Calories</th> <th>Protein</th> <th>Carbs</th> <th>Fat</th> <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var meal in meals){
+                <tr>
+                    <td>@meal.Name</td>
+                    <td>@meal.Calories</td>
+                    <td>@meal.Protein</td>
+                    <td>@meal.Carbs</td>
+                    <td>@meal.Fat</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" @onclick="() => StartEdit(meal)">Edit</button>
+                        <button class="btn btn-sm btn-danger" @onclick="() => DeleteMeal(meal.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+<h4>@(editingMeal.Id == 0 ? "Add Meal" : "Edit Meal")</h4>
+
+<input class="form-control" placeholder="Name" @bind="editingMeal.Name"/>
+<input class="form-control" placeholder="Calories" type="number" @bind="editingMeal.Calories" />
+<input class="form-control" placeholder="Protein" type="number" @bind="editingMeal.Protein" />
+<input class="form-control" placeholder="Carbs" type="number" @bind="editingMeal.Carbs" />
+<input class="form-control" placeholder="Fat" type="number" @bind="editingMeal.Fat" />
+<button class="btn btn-primary mt-2" @onclick="SaveMeal">Save</button>
+<button class="btn btn-secondary mt-2" @onclick="ResetForm">Cancel</button>
+
+@code{
+
+    private List<Meal>? meals;
+    private Meal editingMeal = new Meal();
+
+    //must use American English for this function since its inbuilt in Blazor
+    protected override async Task OnInitializedAsync(){
+        meals = await MealService.GetAllAsync();
+    }
+
+    private void StartEdit(Meal meal){
+        editingMeal = new Meal{
+            Id = meal.Id, Name = meal.Name, Calories = meal.Calories, Carbs = meal.Carbs, Fat = meal.Fat, Protein = meal.Protein, LastEaten = meal.LastEaten
+        };
+    }
+
+    private async Task SaveMeal(){
+        if (editingMeal.Id == 0){
+            await MealService.CreateAsync(editingMeal);
+        }
+        else{
+            await MealService.UpdateAsync(editingMeal.Id, editingMeal);
+        }
+
+        ResetForm();
+        meals = await MealService.GetAllAsync();
+    }
+
+    private async Task DeleteMeal(int id){
+        await MealService.DeleteAsync(id);
+        meals = await MealService.GetAllAsync();
+    }
+
+    private void ResetForm(){
+        editingMeal = new Meal();
+    }
+}
+
