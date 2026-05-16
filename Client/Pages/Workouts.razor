@@ -26,7 +26,7 @@ else{
                     <td>@workout.Notes</td>
                     <td>
                         <button class="btn btn-sm btn-warning" @onclick="() => StartEdit(workout)">Edit</button>
-                        <button class="btn btn-sm btn-danger" @onclick="() => DeleteMeal(workout.Id)">Delete</button>
+                        <button class="btn btn-sm btn-danger" @onclick="() => DeleteWorkout(workout.Id)">Delete</button>
                     </td>
                 </tr>
             }
@@ -35,7 +35,7 @@ else{
 
 }
 
-<h4>@(editingWorkout.Id == 0 ? "Add Meal" : "Edit Meal")</h4>
+<h4>@(editingWorkout.Id == 0 ? "Add Workout" : "Edit Workout")</h4>
 
 <input class="form-control" placeholder="Name" @bind="editingWorkout.Name"/>
 <input class="form-control" placeholder="Type" type="number" @bind="editingWorkout.Type" />
@@ -43,7 +43,7 @@ else{
 <input class="form-control" placeholder="Expected Calories Burned" type="number" @bind="editingWorkout.ExpectCalBurned" />
 <input class="form-control" placeholder="Scheduled For" type="number" @bind="editingWorkout.ScheduledFor" />
 <input class="form-control" placeholder="Notes" type="number" @bind="editingWorkout.Notes" />
-<button class="btn btn-primary mt-2" @onclick="SaveMeal">Save</button>
+<button class="btn btn-primary mt-2" @onclick="SaveWorkout">Save</button>
 <button class="btn btn-secondary mt-2" @onclick="ResetForm">Cancel</button>
 
 @code{
@@ -62,7 +62,7 @@ else{
         };
     }
 
-    private async Task SaveMeal(){
+    private async Task SaveWorkout(){
         if (editingWorkout.Id == 0){
             await WorkoutService.CreateAsync(editingWorkout);
         }
@@ -74,7 +74,7 @@ else{
         workouts = await WorkoutService.GetAllAsync();
     }
 
-    private async Task DeleteMeal(int id){
+    private async Task DeleteWorkout(int id){
         await WorkoutService.DeleteAsync(id);
         workouts = await WorkoutService.GetAllAsync();
     }
